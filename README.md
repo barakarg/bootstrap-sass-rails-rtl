@@ -21,7 +21,7 @@ The easiest way to use Twitter Bootstrap is to require it in your `application.c
 ```css
 /*
  *= require twitter/bootstrap # LTR version
- *= require twitter/bootstrap/rtl # RTL version
+ *= require twitter/bootstrap_rtl # RTL version
  */
 
 #example {
@@ -34,7 +34,7 @@ will need to import it within an `.css.scss` file. This will still include the c
 
 ```css
 @import "twitter/bootstrap"; # LTR version
-@import "twitter/bootstrap/rtl"; # RTL version
+@import "twitter/bootstrap_rtl"; # RTL version
 
 #foo {
   @include border-radius(4px);
@@ -46,7 +46,7 @@ within `.css.scss` files.
 
 ```css
 @import "twitter/bootstrap/variables";
-@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/rtl/mixins";
 
 @mixin myButton($radius: 5px) {
   @include border-radius($radius);
