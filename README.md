@@ -5,6 +5,8 @@ It includes base CSS styles for typography, forms, buttons, tables, grids, navig
 
 Twitter Bootstrap has been converted to Sass which makes it possible to use the default Rails Asset Pipeline
 
+This version is a fork of the original bootstrap-sass-rails gem with added support for RTL css
+
 * All assets have been namespaced within twitter/bootstrap to avoid naming conflicts
 * Top level requires for sprockets to get the complete bundle with a
   simple = require twitter/bootstrap
@@ -18,7 +20,8 @@ The easiest way to use Twitter Bootstrap is to require it in your `application.c
 
 ```css
 /*
- *= require twitter/bootstrap
+ *= require twitter/bootstrap # LTR version
+ *= require twitter/bootstrap/rtl # RTL version
  */
 
 #example {
@@ -30,7 +33,8 @@ If you need access to the variables within the Twitter Bootstrap framework or wa
 will need to import it within an `.css.scss` file. This will still include the complete framework.
 
 ```css
-@import "twitter/bootstrap";
+@import "twitter/bootstrap"; # LTR version
+@import "twitter/bootstrap/rtl"; # RTL version
 
 #foo {
   @include border-radius(4px);
@@ -97,7 +101,8 @@ This gem has been inspired by [less-rails-bootstrap](https://github.com/metaskil
 
 ## Maintainers
 
-* [Morton Jonuschat](https://github.com/yabawock)
+* [Morton Jonuschat](https://github.com/yabawock) (Original Gem)
+* [Zohar Arad](https://github.com/zohararad) (RTL version)
 
 ## License
 
@@ -106,4 +111,5 @@ Apache License, Version 2.0
 ## Copyright
 
 Copyright 2011-2012 Morton Jonuschat  
+Copyright 2011-2012 Zohar Arad
 Twitter Bootstrap copyright 2011-2012 Twitter, Inc  
