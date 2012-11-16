@@ -4,7 +4,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'application.css' do
 
-    let(:app_css) { dummy_asset('application.css') }
+    let(:app_css) { dummy_asset('application-rtl.css') }
 
     it 'will render main bootstrap.less file and all included modules' do
       app_css.must_include 'Bootstrap v'
@@ -51,58 +51,9 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   end
 
-  describe 'no-sprites.css' do
-
-    let(:app_css) { dummy_asset('no-sprites.css') }
-
-    it 'will render main bootstrap-no-sprites.scss file and include alls modules except sprites' do
-      app_css.must_include 'Bootstrap v'
-      app_css.must_include '_reset.scss'
-      app_css.must_include '_scaffolding'
-      app_css.must_include '_layouts.scss'
-      app_css.must_include '_type.scss'
-      app_css.must_include '_code.scss'
-      app_css.must_include '_forms.scss'
-      app_css.must_include '_tables.scss'
-      app_css.must_include '_dropdowns.scss'
-      app_css.must_include '_wells.scss'
-      app_css.must_include '_component-animations.scss'
-      app_css.must_include '_close.scss'
-      app_css.must_include '_buttons.scss'
-      app_css.must_include '_button-groups.scss'
-      app_css.must_include '_alerts.scss'
-      app_css.must_include '_navs.scss'
-      app_css.must_include '_navbar.scss'
-      app_css.must_include '_breadcrumbs.scss'
-      app_css.must_include '_pagination.scss'
-      app_css.must_include '_pager.scss'
-      app_css.must_include '_modals.scss'
-      app_css.must_include '_tooltip.scss'
-      app_css.must_include '_popovers.scss'
-      app_css.must_include '_thumbnails.scss'
-      app_css.must_include '_media.scss'
-      app_css.must_include '_labels-badges.scss'
-      app_css.must_include '_progress-bars.scss'
-      app_css.must_include '_accordion.scss'
-      app_css.must_include '_carousel.scss'
-      app_css.must_include '_hero-unit.scss'
-      app_css.wont_include '_sprites.scss'
-    end
-
-    it 'must include basic css afterward' do
-      app_css.must_include '#other-css { color: red; }',  'From our code afterward.'
-    end
-
-    it 'must not render the path to the icon sprites' do
-      app_css.wont_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png)'
-      app_css.wont_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png)'
-    end
-
-  end
-
   describe 'individual.scss' do
 
-    let(:individual_css) { dummy_asset('individual.css') }
+    let(:individual_css) { dummy_asset('individual-rtl.css') }
 
     it 'will render bootstrap variables and mixins' do
       my_button_line = line_for_individual_css('individual-my-button')
@@ -120,7 +71,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'sprockets.css' do
 
-    let(:sprockets_css) { dummy_asset('sprockets.css') }
+    let(:sprockets_css) { dummy_asset('sprockets-rtl.css') }
 
     it 'will render main bootstrap.css file and all included modules' do
       sprockets_css.must_include 'Bootstrap v'
