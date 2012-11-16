@@ -32,6 +32,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '_tooltip.scss'
       app_css.must_include '_popovers.scss'
       app_css.must_include '_thumbnails.scss'
+      app_css.must_include '_media.scss'
       app_css.must_include '_labels-badges.scss'
       app_css.must_include '_progress-bars.scss'
       app_css.must_include '_accordion.scss'
@@ -63,6 +64,42 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '_code.scss'
       app_css.must_include '_forms.scss'
       app_css.must_include '_tables.scss'
+      app_css.must_include '_dropdowns.scss'
+      app_css.must_include '_wells.scss'
+      app_css.must_include '_component-animations.scss'
+      app_css.must_include '_close.scss'
+      app_css.must_include '_buttons.scss'
+      app_css.must_include '_button-groups.scss'
+      app_css.must_include '_alerts.scss'
+      app_css.must_include '_navs.scss'
+      app_css.must_include '_navbar.scss'
+      app_css.must_include '_breadcrumbs.scss'
+      app_css.must_include '_pagination.scss'
+      app_css.must_include '_pager.scss'
+      app_css.must_include '_modals.scss'
+      app_css.must_include '_tooltip.scss'
+      app_css.must_include '_popovers.scss'
+      app_css.must_include '_thumbnails.scss'
+      app_css.must_include '_media.scss'
+      app_css.must_include '_labels-badges.scss'
+      app_css.must_include '_progress-bars.scss'
+      app_css.must_include '_accordion.scss'
+      app_css.must_include '_carousel.scss'
+      app_css.must_include '_hero-unit.scss'
+      app_css.wont_include '_sprites.scss'
+    end
+
+    it 'must include basic css afterward' do
+      app_css.must_include '#other-css { color: red; }',  'From our code afterward.'
+    end
+
+    it 'must not render the path to the icon sprites' do
+      app_css.wont_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png)'
+      app_css.wont_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png)'
+    end
+
+  end
+
       app_css.must_include '_sprites.scss'
       app_css.must_include '_dropdowns.scss'
       app_css.must_include '_wells.scss'

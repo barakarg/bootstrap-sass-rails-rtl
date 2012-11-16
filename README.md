@@ -12,6 +12,22 @@ This version is a fork of the original bootstrap-sass-rails gem with added suppo
   simple = require twitter/bootstrap
 * Ability to import individually namespaced stylesheets or javascripts.
 
+## Installation
+
+Add these lines to your application's Gemfile:
+
+    group :assets do
+      gem 'bootstrap-sass-rails'
+    end
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install bootstrap-sass-rails
+
 ## Usage
 
 ### Stylesheets
@@ -56,6 +72,29 @@ within `.css.scss` files.
   @include myButton(10px);
 }
 ```
+
+### Icon Fonts
+
+To ease the common use case of extending Twitter Bootstrap with a icon
+font like [Font Awesome](http://fortawesome.github.com/Font-Awesome/) a
+css file is included which leaves out the original sprites.
+
+You can use it like this
+
+```css
+/*
+ *= require twitter/bootstrap-no-sprites
+ */
+```
+
+or
+
+```css
+@import "twitter/bootstrap-no-sprites";
+```
+
+Please note that Font Awesome is not included in this gem - you will
+need to vendorize the font assets by yourself!
 
 ### Javascripts
 
