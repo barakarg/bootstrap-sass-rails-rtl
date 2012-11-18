@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require
-require "bootstrap-sass-rails"
+require "bootstrap-sass-rails-rtl"
 require "sass-rails"
 
 module Dummy

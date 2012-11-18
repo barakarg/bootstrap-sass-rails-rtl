@@ -12,6 +12,22 @@ This version is a fork of the original bootstrap-sass-rails gem with added suppo
   simple = require twitter/bootstrap
 * Ability to import individually namespaced stylesheets or javascripts.
 
+## Installation
+
+Add these lines to your application's Gemfile:
+
+    group :assets do
+      gem 'bootstrap-sass-rails'
+    end
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install bootstrap-sass-rails
+
 ## Usage
 
 ### Stylesheets
@@ -21,7 +37,7 @@ The easiest way to use Twitter Bootstrap is to require it in your `application.c
 ```css
 /*
  *= require twitter/bootstrap # LTR version
- *= require twitter/bootstrap/rtl # RTL version
+ *= require twitter/bootstrap_rtl # RTL version
  */
 
 #example {
@@ -34,7 +50,7 @@ will need to import it within an `.css.scss` file. This will still include the c
 
 ```css
 @import "twitter/bootstrap"; # LTR version
-@import "twitter/bootstrap/rtl"; # RTL version
+@import "twitter/bootstrap_rtl"; # RTL version
 
 #foo {
   @include border-radius(4px);
@@ -46,7 +62,7 @@ within `.css.scss` files.
 
 ```css
 @import "twitter/bootstrap/variables";
-@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/rtl/mixins";
 
 @mixin myButton($radius: 5px) {
   @include border-radius($radius);
@@ -56,6 +72,29 @@ within `.css.scss` files.
   @include myButton(10px);
 }
 ```
+
+### Icon Fonts
+
+To ease the common use case of extending Twitter Bootstrap with a icon
+font like [Font Awesome](http://fortawesome.github.com/Font-Awesome/) a
+css file is included which leaves out the original sprites.
+
+You can use it like this
+
+```css
+/*
+ *= require twitter/bootstrap-no-sprites
+ */
+```
+
+or
+
+```css
+@import "twitter/bootstrap-no-sprites";
+```
+
+Please note that Font Awesome is not included in this gem - you will
+need to vendorize the font assets by yourself!
 
 ### Javascripts
 
