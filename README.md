@@ -17,7 +17,7 @@ This version is a fork of the original bootstrap-sass-rails gem with added suppo
 Add these lines to your application's Gemfile:
 
     group :assets do
-      gem 'bootstrap-sass-rails'
+      gem 'bootstrap-sass-rails-rtl'
     end
 
 And then execute:
@@ -26,7 +26,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install bootstrap-sass-rails
+    $ gem install bootstrap-sass-rails-rtl
 
 ## Usage
 
