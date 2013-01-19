@@ -1,3 +1,4 @@
+/* Partial: twitter/bootstrap/_labels-badges.scss */
 //
 // Labels and badges
 // --------------------------------------------------
@@ -25,6 +26,14 @@
   padding-right: 9px;
   padding-left: 9px;
   @include border-radius(9px);
+}
+
+// Empty labels/badges collapse
+.label,
+.badge {
+  &:empty {
+    display: none;
+  }
 }
 
 // Hover state, but only for links

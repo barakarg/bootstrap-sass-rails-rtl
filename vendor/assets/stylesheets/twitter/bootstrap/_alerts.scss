@@ -1,78 +1,35 @@
-/* Partial: twitter/bootstrap/_alerts.scss */
+/* Partial: twitter/bootstrap/_accordion.scss */
 //
-// Alerts
+// Accordion
 // --------------------------------------------------
 
 
-// Base styles
-// -------------------------
-
-.alert {
-  padding: 8px 35px 8px 14px;
+// Parent container
+.accordion {
   margin-bottom: $baseLineHeight;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  background-color: $warningBackground;
-  border: 1px solid $warningBorder;
+}
+
+// Group == heading + body
+.accordion-group {
+  margin-bottom: 2px;
+  border: 1px solid #e5e5e5;
   @include border-radius($baseBorderRadius);
 }
-.alert,
-.alert h4 {
-  // Specified for the h4 to prevent conflicts of changing @headingsColor
-  color: $warningText;
+.accordion-heading {
+  border-bottom: 0;
 }
-.alert h4 {
-  margin: 0;
-}
-
-// Adjust close link position
-.alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: $baseLineHeight;
+.accordion-heading .accordion-toggle {
+  display: block;
+  padding: 8px 15px;
 }
 
-// Alternate styles
-// -------------------------
-
-.alert-success {
-  background-color: $successBackground;
-  border-color: $successBorder;
-  color: $successText;
-}
-.alert-success h4 {
-  color: $successText;
-}
-.alert-danger,
-.alert-error {
-  background-color: $errorBackground;
-  border-color: $errorBorder;
-  color: $errorText;
-}
-.alert-danger h4,
-.alert-error h4 {
-  color: $errorText;
-}
-.alert-info {
-  background-color: $infoBackground;
-  border-color: $infoBorder;
-  color: $infoText;
-}
-.alert-info h4 {
-  color: $infoText;
+// General toggle styles
+.accordion-toggle {
+  cursor: pointer;
 }
 
-
-// Block alerts
-// -------------------------
-.alert-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-.alert-block > p,
-.alert-block > ul {
-  margin-bottom: 0;
-}
-.alert-block p + p {
-  margin-top: 5px;
+// Inner needs the styles because you can't animate properly with any styles on the element
+.accordion-inner {
+  padding: 9px 15px;
+  border-top: 1px solid #e5e5e5;
 }
